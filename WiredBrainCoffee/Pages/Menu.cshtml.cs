@@ -11,7 +11,7 @@ namespace WiredBrainCoffee.Pages
     public class MenuModel : PageModel
     {
         public List<MenuItem>  Menu { get; set; }
-        public void OnGet(int id)
+        public void OnGet()
         {
             var menuService = new MenuService();
             Menu= menuService.GetMenuItems();
