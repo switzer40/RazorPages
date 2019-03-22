@@ -10,11 +10,11 @@ namespace WiredBrainCoffee.Pages
 {
     public class MenuModel : PageModel
     {
-        public List<MenuItem> Menu { get; set; }
-        public void OnGet()
+        public List<MenuItem>  Menu { get; set; }
+        public void OnGet(int id)
         {
             var menuService = new MenuService();
-            Menu = menuService.GetMenuItems();
+            Menu= menuService.GetMenuItems();
         }
     }
 }
