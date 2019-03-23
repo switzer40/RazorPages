@@ -8,9 +8,21 @@ namespace WiredBrainCoffee.Services
 {
     public class EMailService : IEmailService
     {
-        public void SendEmail(Contact contact)
+        public void SendEmailWithContact(Contact contact)
         {
-            throw new NotImplementedException();
+            SendEmail(contact.Email);
+        }
+        public void SendEmail(string address)
+        {
+            if (string.IsNullOrWhiteSpace(address))
+            {
+                Complain(address);
+            }
+        }
+
+        private void Complain(string address)
+        {
+            var message = $"The email address {address} is not valid";
         }
     }
 }

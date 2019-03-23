@@ -11,7 +11,7 @@ namespace WiredBrainCoffee.Pages
 {
     public class ContactModel : PageModel
     {
-        public IEmailService EmailService { get; set; }
+        public static IEmailService EmailService { get; set; }
         [BindProperty] public Contact Contact { get; set; }
         [BindProperty] public string Message { get; set; }
 
@@ -19,17 +19,19 @@ namespace WiredBrainCoffee.Pages
         {
             EmailService = new EMailService();
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
-                //EmailService.SendEmail(Contact);
-                Message = "Your email has been sent.";
-            }            
+                EmailService.SendEmailWithContact(Contact);
+                return new RedirectToPageResult("Confirmation", "Contact");
+            }
+            return Page();
         }
-        public void OnPostSubscribe(string address)
+        public IActionResult OnPostSubscribe(string address)
         {
-            Message = "You have been added to the mailing list.";
+            EmailService.SendEmail(address);
+            return new RedirectToPageResult("Confirmation", "Subscribe");
         }
     }
 }
