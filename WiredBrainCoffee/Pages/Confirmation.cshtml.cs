@@ -12,7 +12,7 @@ namespace WiredBrainCoffee.Pages
         [BindProperty] public string Message { get; set; }
         public void OnGetContact()
         {
-            Message = "Your enail was sent to our team.";
+            Message = "Your email was sent to our team.";
         }
         public void OnGetSubscribe()
         {
