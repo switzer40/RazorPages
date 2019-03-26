@@ -15,6 +15,7 @@ namespace WiredBrainCoffee.Services
                 new MenuItem()
                 {
                     Name = "Frosted Pumpkin Bread",
+                    Slug = "pumpkin-bread",
                     Summary = "A seasonal delight we offer every autumn.  Pumpking bread with just a bit of spice, cream cheese frosting with just a hint of home.",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageFile = "pumpkinbread.png"
@@ -22,6 +23,7 @@ namespace WiredBrainCoffee.Services
                 new MenuItem()
                 {
                     Name = "Ground to Go",
+                    Slug = "ground-coffee",
                     Summary = "Love our coffee? Take it with you so you never have to be without!",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageFile = "ground.png"
@@ -53,6 +55,28 @@ namespace WiredBrainCoffee.Services
                     Summary = "We've got strawberries, blueberries, apples, bananas - we could list them all, but we'd prefer you come take a look!",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageFile = "strawberries.png"
+                }
+            };
+        }
+
+        internal List<MenuItem> GetPopularItems()
+        {
+            return new List<MenuItem>()
+            {
+                new MenuItem()
+                {
+                    Name = "Raspberry Coffee",
+                    Summary = "A fresh blend with a refreshing taste"
+                },
+                new MenuItem()
+                {
+                    Name ="Peppermint Hot Chocolate",
+                    Summary = "So good, you´ll be glad it´s cold outside."
+                },
+                new MenuItem()
+                {
+                    Name = "Colombian Blue",
+                    Summary = "An unusual coffe taste experience."
                 }
             };
         }
